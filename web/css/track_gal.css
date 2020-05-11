@@ -1,0 +1,192 @@
+
+.row_gal {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-v4 {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+  /*border : 1px solid blue;*/
+
+}
+
+.column-v4 img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+.column-v2 {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 2px;
+  /*border : 1px solid green;*/
+
+}
+.column-v2 img {
+  margin-top: 4px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+.column-v {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 2px;
+  /*border : 1px solid yellow;*/
+}
+.column-v img {
+  margin: auto;
+  margin-top: 4px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+  @media only screen and (min-width: 600px) {
+    /* For mobiles 0: 
+       одна колонка
+    */
+    .desctop {display: flex;}
+    .tablet {display: none;}
+    .mobile {display: none;}
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* For tablets: 
+      две колонки   */
+
+    .desctop {display: none;}
+    .tablet {display: flex;}
+    .mobile {display: none;}
+  }
+
+  @media only screen and (max-width: 360px) {
+    .desctop {display: none;}
+    .tablet {display: none;}
+    .mobile {display: flex;}
+  }
+
+
+ /* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 2rem; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-height: 95vh;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: none;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  z-index:5; /* Sit on top */
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 100%;
+  padding: 16px;
+  color: #0e0036;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.1s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.prev>a, .next>a {
+  margin:auto;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(100,190,190,0.2);
+}
+
+
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  z-index: 1;
+  position: absolute;
+  top: 1rem;
+  right: 50%;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Scre ens */
+@media only screen and (max-width: 600px){
+  .modal-content {
+    width: 100%;
+  }
+}

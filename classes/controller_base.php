@@ -4,7 +4,7 @@
 abstract class Controller_Base
 {
 
-    protected $registry;
+
     protected $template;
     protected $layouts; // шаблон
 

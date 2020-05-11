@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'monserrat';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.2em;
+    line-height: 1.2;
+    /*background-color: black*/
+}
+
+h1{
+    text-align: left;
+    font-size: 1.5em;
+    text-indent: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-family: palatino;
+    color: #523821;
+    font-weight: bold;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.m-bachround{
+    /*background-color: rgb(243,242,233);*/
+   background-color: #f3f2ea;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    /*border: 1px solid red;ё*/
+}
+
+@media only screen and (max-width: 756px) {
+    /* For mobiles 0: */
+    .col-m-0 {
+        width: 0
+    }
+
+    .photoname {
+        font-size: 1.2em;
+    }
+    h1{
+        text-align:  center;
+        font-size: 1.1em;
+        margin-top: 1.2rem;
+        margin-bottom: 0.2rem;
+        font-family: palatino;
+        text-indent: 0;
+    }
+
+ }
+@media only screen and (min-width: 757px) {
+
+
+    /* For tablets: */
+    .col-s-0 {
+        width: 0
+    }
+
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+    .logo_container > img {
+        height: 80px;
+        width: auto;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+    .logo_container > img {
+        height: 96px;
+        width: auto;
+    }
+}
+
+@font-face {
+    font-family: gabriola;
+    src: url(/web/fonts/gabriola.ttf);
+}
+
+@font-face {
+    font-family: palatino;
+    src: url(/web/fonts/9991.ttf);
+}
+
+@font-face {
+    font-family: monserrat;
+    src: url(/web/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'FoglihtenNo06';
+    src:  url('/web/fonts/foglihtenno06.woff') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    margin-top: 0.1rem;
+}
+
+nav p, .nav-link, .logo_container {
+    font-family: monserrat;
+    color: #523821;
+}
+
+.logo_container>.photoname{
+    font-size: 1.8em;
+    color: #523821;
+    font-family: FoglihtenNo06;
+    font-weight: bold;
+
+}
+
+.logo_container span{
+    margin: auto;
+}
+
+.logo_container{
+    white-space: pre;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+}
+
+.nav_container {
+    flex-grow: 6;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.main_logo {
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    /*background-image: linear-gradient(to right, rgba(62, 184, 254, 0.6) 10%, rgba(252, 237, 182, 0.9) 50%);*/
+}
+
+
+.off {
+    display: none;
+}
+
+.border-dark{
+    box-shadow: 7px 7px 14px 0 #353535bf;
+}
+
+@media only screen and (min-width: 2100px) {
+    h1{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+    body{
+        font-size: 1.4em;
+    }
+    .logo_container{
+        font-size: 1em;
+    }
+
+}

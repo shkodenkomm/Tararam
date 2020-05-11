@@ -1,0 +1,49 @@
+.seria {
+    padding-bottom: 0.5rem;
+}
+
+.middle_pad {
+    /*padding-right: 0.2rem;*/
+}
+
+
+.seria_caption{
+    font-family: gabriola;
+    font-style: italic;
+    background-image: linear-gradient(to bottom, rgba(252,237,182,0.8), rgba(252,237,182,1));
+    text-align: center;
+    padding-top: 0.3rem;
+    color: #1a1248;
+}
+
+.seria_caption a{
+    text-decoration: none;
+    color: darkblue;
+}
+
+.img_part{
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
+
+.tile_img>a>img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+}
+
+.text_part{
+    overflow: auto;
+    display: none;
+}
+.text_part>p{
+    margin-left: 2rem;
+}
+@media only screen and (min-width: 2100px) {
+
+    .seria_caption{
+        font-size: 1.8em;
+    }
+
+}

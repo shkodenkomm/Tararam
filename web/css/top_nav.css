@@ -1,0 +1,70 @@
+
+.topnav{
+    /*background-image: linear-gradient(to left, rgba(252,237,182,1), rgba(252,237,182,0));*/
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+
+.topnav>a {
+    min-width: 110px;
+    padding-left: 0.2rem;
+    text-decoration: none;
+}
+
+.topnav span {
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+}
+
+
+#top_mail{
+    display: inline;
+    position: fixed;
+    top: 68px;
+    padding:1rem;
+}
+
+@media only screen and (min-width: 2100px) {
+    .topnav{
+    }
+
+}
+
+
+/*убрать разделители меню*/
+@media only screen and (max-width: 650px) {
+    .topnav{
+        padding-right: 5px;
+    }
+    .topnav>a {
+        min-width: 60px;
+    }
+    .topnav {
+        justify-content: center;
+    }
+
+}
+
+/*убрать ПАЛОЧКУ*/
+@media only screen and (max-width: 528px) {
+    .palochka{
+        display: none;
+    }
+}
+
+/*убрать разделители меню*/
+@media only screen and (max-width: 350px) {
+    .topnav span{
+        display: none;
+    }
+}
+
+

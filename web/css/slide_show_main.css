@@ -1,0 +1,144 @@
+/* Slideshow container */
+.slideshow-container {
+  /*max-width: 1000px;*/
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default 
+.mySlides {
+  display: none;
+}*/
+
+/* Next & previous buttons */
+.prev, .next {
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 100%;
+  padding: 16px;
+  color: grey;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.1s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.prev>a, .next>a {
+  margin:auto;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(100,190,190,0.2);
+}
+
+
+/* Caption text */
+.text {
+    color: #790000;
+    font-size: 24px;
+    text-align: right;
+    padding: 20px 12px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 30%;
+    text-align: center;
+    display: none;
+    background-color: darkgray;
+    transition: 0.5s easy;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot-container {
+    background-color: rgba(229, 238, 255, 0.14);
+    display: flex;
+    padding: 5px; 
+    width: 100%;
+    justify-content: center;    
+}
+.d-dot-container {
+   display: flex;   
+   position: absolute;
+   top: 100%;
+   width: 100%;
+   margin-top: -60px;
+   overflow: auto;
+   z-index: 1;  
+ }
+
+ .dot img{
+    width: 50px;
+    display: block;
+    margin: 3px;
+ }
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 40px;
+  width: 56px;
+  margin: 0 4px;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 8%;
+  display: flex;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: rgba(0, 27, 167, 0.8);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+
+/*выравнивание превьюшек слева, чтоб все влезли в прокрутку*/
+@media only screen and (max-width: 1380px) {
+   .dot-container {
+        justify-content: flex-start;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .slideshow-container {
+        margin-bottom: 50px;
+    }
+
+    .d-dot-container {
+        margin-top: 0px;
+    }
+}
