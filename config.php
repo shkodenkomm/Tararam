@@ -10,6 +10,8 @@ define('DB_PASS', 'zze96788a45');
 define('DB_HOST', 'mysql316.1gb.ua');
 define('DB_NAME', 'gbua_z_shk71e65');
 
+define('IMAGES_ROOT_DIR', $sitePath.'web'.DS.'data'.DS.'imgs'.DS);
+
 $ganId="UA-145454799-1";
 $gtmPortfolioId="GTM-K4P3CCF";
 

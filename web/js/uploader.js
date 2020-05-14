@@ -39,8 +39,9 @@ function handleDrop(e) {
     handleFiles(files)
 }
 
-let uploadProgress = []
-let progressBar = document.getElementById('progress-bar')
+let uploadProgress = [];
+let progressBar = document.getElementById('progress-bar');
+let fileses;
 
 function initializeProgress(numFiles) {
     progressBar.value = 0
@@ -59,10 +60,11 @@ function updateProgress(fileNumber, percent) {
 }
 
 function handleFiles(files) {
-    files = [...files]
+    fileses = [...files]
     initializeProgress(files.length)
-    files.forEach(uploadFile)
-    files.forEach(previewFile)
+    //files.forEach(uploadFile)
+    //uploadFile(files)
+    fileses.forEach(previewFile)
 }
 
 function previewFile(file) {
@@ -75,17 +77,17 @@ function previewFile(file) {
     }
 }
 
-function uploadFile(file, i) {
-    var url = 'https://tararam.ua/edit/images/upload'
-    var xhr = new XMLHttpRequest()
-    var formData = new FormData()
-    xhr.open('POST', url, true)
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+function uploadFile() {
+    var url = 'http://tararam.ua/edit/images/upload';
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     // Update progress (can be used to show progress indicator)
     xhr.upload.addEventListener("progress", function(e) {
         updateProgress(i, (e.loaded * 100.0 / e.total) || 100)
-    })
+    });
 
     xhr.addEventListener('readystatechange', function(e) {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -94,9 +96,11 @@ function uploadFile(file, i) {
         else if (xhr.readyState == 4 && xhr.status != 200) {
             // Error. Inform the user
         }
-    })
+    });
 
-    formData.append('upload_preset', 'ujpu6gyk')
-    formData.append('file', file)
+    formData.append('serverPath',
+        document.getElementById("serverPath").value );
+
+    fileses.forEach(function(f){formData.append('imgs[]', f)});
     xhr.send(formData)
 }

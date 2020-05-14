@@ -5,7 +5,8 @@ class Controller_Images extends Controller_Base
 {
 
     // шаблон
-    public $layouts = "edit_images_layouts";
+    public $layouts = "layout_base";
+    private $destination = "/var/www/tararam/web/data/imgs/";
 
     // экшен
     function index()
@@ -17,13 +18,17 @@ class Controller_Images extends Controller_Base
     // обработка загрузки
     function upload()
     {
-        foreach ($_FILES["pictures"]["error"] as $key => $error) {
+        $img_path = IMAGES_ROOT_DIR;
+        if(!is_dir(IMAGES_ROOT_DIR.$_POST["serverPath"])){
+            mkdir(IMAGES_ROOT_DIR.$_POST["serverPath"]);
+            $img_path = IMAGES_ROOT_DIR.$_POST["serverPath"];
+        }
+
+        foreach ($_FILES["imgs"]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES["pictures"]["tmp_name"][$key];
-                // basename() может спасти от атак на файловую систему;
-                // может понадобиться дополнительная проверка/очистка имени файла
-                $name = basename($_FILES["pictures"]["name"][$key]);
-                move_uploaded_file($tmp_name, "/web/data/img/$name");
+                $tmp_name = $_FILES["imgs"]["tmp_name"][$key];
+                $name = $_FILES["imgs"]["name"][$key];
+                move_uploaded_file($tmp_name, $img_path.DS.$name);
             }
         }
 
