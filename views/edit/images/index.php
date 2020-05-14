@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="/web/css/uploader.css">
+    <script src="/web/js/uploader.js"></script>
+
 </head>
 <body>
 <div id="drop-area">
@@ -15,10 +19,5 @@
     <div id="gallery"/>
 </div>
 </div>
-<div class="note"><strong>Note: I've Removed the ability to actually upload files (it will error out silently since
-    there is no error handler, so it'll still appear to work) because you guys were constantly filling up my Cloudinary
-    account. Please <a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/j6iiupngdmwwwqspjtml">create your own
-        account</a> and replace the "joezim007" and "ujpu6gyk" bits in the JavaScript with your own account's
-    information.</strong></div>
 </body>
 </html>
