@@ -1,0 +1,19 @@
+.cartImg{
+    display:none;
+    flex-direction: column;
+    max-width: 12rem;
+    padding: 10px;
+    border: 1px solid #336699;
+}
+
+.imgDb{
+    width: 150px;
+    vertical-align: middle;
+}
+
+#gallery {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}

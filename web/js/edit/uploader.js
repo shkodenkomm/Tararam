@@ -67,15 +67,6 @@ function handleFiles(files) {
     fileses.forEach(previewFile)
 }
 
-function previewFile(file) {
-    let reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onloadend = function() {
-        let img = document.createElement('img')
-        img.src = reader.result
-        document.getElementById('gallery').appendChild(img)
-    }
-}
 
 function uploadFile() {
     var url = 'http://tararam.ua/edit/images/upload';
