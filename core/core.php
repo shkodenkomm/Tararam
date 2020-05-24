@@ -1,7 +1,6 @@
 <?php
 // Загрузка классов "на лету"
-function __autoload($className)
-{
+spl_autoload_register(function($className) {
     $filename = strtolower($className) . '.php';
     // определяем класс и находим для него путь
     $expArr = explode('_', $className);
@@ -30,4 +29,4 @@ function __autoload($className)
     }
     // подключаем файл с классом
     include($file);
-}
+});

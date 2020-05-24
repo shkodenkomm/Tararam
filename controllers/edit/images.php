@@ -20,9 +20,12 @@ class Controller_Images extends Controller_Base
     {
         $img_path = IMAGES_ROOT_DIR;
         if(!is_dir(IMAGES_ROOT_DIR.$_POST["serverPath"])){
-            mkdir(IMAGES_ROOT_DIR.$_POST["serverPath"]);
+            mkdir(IMAGES_ROOT_DIR.$_POST["serverPath"],777,true);
             $img_path = IMAGES_ROOT_DIR.$_POST["serverPath"];
         }
+
+        $Images = new Model_Images();
+        $imgs = $Images->getAllRows();
 
         foreach ($_FILES["imgs"]["error"] as $key => $error) {
             if ($error == UPLOAD_ERR_OK) {
@@ -31,6 +34,9 @@ class Controller_Images extends Controller_Base
                 move_uploaded_file($tmp_name, $img_path.DS.$name);
             }
         }
+
+
+
 
         // показать загруженые файлы
         // дать возможность привязать к  базе

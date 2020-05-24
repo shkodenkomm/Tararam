@@ -89,9 +89,40 @@ function uploadFile() {
         }
     });
 
+    let imList = document.querySelectorAll("#gallery>.cartImg");
+    let dtList =[];
+    imList.forEach(
+        function(im){
+            let dtIm = {};
+            if( im.querySelector(".chkDb>input").checked){
+                let p = im.querySelector(".nameDb>input");
+                dtIm.title =p.value;
+
+                p=im.querySelector(".rateDB>input");
+                dtIm.rate = p.value;
+
+                p=im.querySelector(".tagsDb>textarea");
+                dtIm.tags =p.value;
+
+                dtList.push(dtIm);
+            }
+        }
+
+);
+
+
+
     formData.append('serverPath',
         document.getElementById("serverPath").value );
 
-    fileses.forEach(function(f){formData.append('imgs[]', f)});
+    fileses.forEach(
+        function(f){
+            formData.append('imgs[]', f)}
+    );
+
+    dtList.forEach(
+        function(f){
+            formData.append('imgDT[]', f)}
+    );
     xhr.send(formData)
 }

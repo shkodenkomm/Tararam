@@ -1,11 +1,9 @@
 function buildCart(f, r){
     let cart = document.createElement('div');
-    cart.classList.add("cartImg");
-
     let cartHtml =  document.getElementById('cartImgTemplate').innerHTML.trim();
     cart.insertAdjacentHTML('beforeend', cartHtml);
-
-
+    cart.classList.add("cartImg");
+    
     cart.querySelector(".chkDb>input").checked = true;
     cart.querySelector(".imgDb>img").src = r.result;
     cart.querySelector(".nameDb>input").value= f.name;

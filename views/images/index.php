@@ -20,7 +20,7 @@
 
     </div>
     <div id="gallery">
-        <div class="cartImg" id="cartImgTemplate">
+        <div id="cartImgTemplate">
             <div class="chkDb"><input type="checkbox" name="addToDb" id="0" ></input ></div>
             <div class="imgDb"><img src="/web/data/imgs/cat.jpg" alt=""></div>
             <div class="rateDb">
